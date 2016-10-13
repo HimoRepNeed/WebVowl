@@ -69,12 +69,13 @@ export class Parser {
                         node.annotations = c.annotations;
                         node.baseIri = c.baseIri;
                         node.comment = c.comment;
-                        node.complement = c.disjointUnion;
+                        node.complement = c.complement;
+                        node.disjointUnion = c.disjointUnion;
                         node.description = c.description;
                         node.equivalents = c.equivalents;
                         node.id = c.id;
                         node.intersection = c.intersection;
-                        node.label = c.label;
+                        node.label = c.label ? c.label : node.label;
                         node.union = c.union;
                         node.iri = c.iri;
 
@@ -148,7 +149,7 @@ export class Parser {
                     property.equivalents = element.equivalent;
                     property.id = element.id;
                     property.inverse(element.inverse);
-                    property.label = element.label;
+                    property.label = element.label ? element.label : property.label;
                     property.minCardinality = element.minCardinality;
                     property.maxCardinality = element.maxCardinality;
                     property.range = element.range;

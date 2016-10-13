@@ -33,8 +33,8 @@ export class VowlMath {
         let fairShareLoopAngle = 360 / link.loops.length;
         let fairShareLoopAngleWithMargin = fairShareLoopAngle * 0.8;
         let loopAngle = Math.min(60, fairShareLoopAngleWithMargin);
-        let nodex = isNaN(node.x) ? 0 : node.x;
-        let nodey = isNaN(node.y) ? 0 : node.y;
+        let nodex = node.x;
+        let nodey = node.y;
 
         let dx = label.x - nodex;
         let dy = label.y - nodey;
@@ -71,10 +71,10 @@ export class VowlMath {
     }
 
     static calculateIntersection = (source, target, additionslaDistance) => {
-        let tx = isNaN(target.x) ? 0 : target.x;
-        let sx = isNaN(source.x) ? 0 : source.x;
-        let ty = isNaN(target.y) ? 0 : target.y;
-        let sy = isNaN(source.y) ? 0 : source.y;
+        let tx = target.x;
+        let sx = source.x;
+        let ty = target.y;
+        let sy = source.y;
 
         let dx = tx - sx;
         let dy = ty - sy;

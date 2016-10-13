@@ -70,11 +70,11 @@ export class BaseElement implements IBaseElement {
         return LanguageTools.textInLanguage(this.label, "default");
     };
 
-    indicationString = () => {
+    indicationString() {
         return this.indications.join(', ');
     }
 
-    labelForCurrentLanguage = () => {
+    labelForCurrentLanguage() {
         var preferredLanguage = this.graph && this.graph.language ? this.graph.language : null;
         return LanguageTools.textInLanguage(this.label, preferredLanguage);
     }

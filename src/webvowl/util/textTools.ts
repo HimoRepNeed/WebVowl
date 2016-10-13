@@ -25,10 +25,10 @@ export class TextTools {
             return text;
         }
 
-        var truncatedText = text,
-            newTruncatedTextLength,
-            textWidth,
-            ratio;
+        let truncatedText = text;
+        let newTruncatedTextLength;
+        let textWidth;
+        let ratio;
 
         while (true) {
             textWidth = TextTools.measureTextWidth(truncatedText, textStyle);

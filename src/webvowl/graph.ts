@@ -35,8 +35,7 @@ export class Graph {
     // public unfilteredData;
 
     public d3;
-    public force;
-    public dragBehaviour: d3.behavior.Drag<any>;
+
     public zoom;
 
     public paused: boolean;
@@ -69,6 +68,8 @@ export class Graph {
         Options.nodeElements.attr("transform", function (node) {
             return "translate(" + node.x + "," + node.y + ")";
         });
+
+
 
         // Set label group positions
         this.labelGroupElements.attr("transform", function (label) {
@@ -127,42 +128,32 @@ export class Graph {
         Options.graphContainerSelector = this.graphContainerSelector;
         let _self = this;
 
-        // d3.selectAll(Options.graphContainerSelector)
-        //     .append("svg")
-        //     .classed("vowlGraph", true)
-        //     .attr("width", Options.width)
-        //     .attr("height", Options.height)
-        //     .call(_self.zoom)
-        //     .append("g");
-
-        this.force = d3.layout.force()
-            .charge(Options.charge)
-            .gravity(Options.gravity)
-            .linkStrength(0.7)
-            .size([Options.width, Options.height])
+        Options.force = d3.layout.force()
             .on("tick", _self.recalculatePositions);
-        // .start();
 
-        this.dragBehaviour = d3.behavior.drag()
-            .origin(function (d: any) {
-                return d;
-            })
+        Options.dragBehaviour = d3.behavior.drag()
+            // .origin(function (d) {
+            //     return d;
+            // })
             .on("dragstart", function (d: any) {
                 d3.event.sourceEvent.stopPropagation(); // Prevent panning
-                d.locked = true;
+                //Options.force.stop();
+                // d.locked = true;
+                d.fixed = true;
             })
             .on("drag", function (d: any) {
                 d.px = d3.event.x;
                 d.py = d3.event.y;
-                _self.force.resume();
+                Options.force.resume();
             })
             .on("dragend", function (d: any) {
-                d.locked = false;
+                // d.locked = false;
+                d.fixed = false;
             });
 
         // Apply the zooming factor.
         this.zoom = d3.behavior.zoom()
-            // .duration(150)
+            .duration(150)
             .scaleExtent([Options.minMagnification, Options.maxMagnification])
             .on("zoom", this.zoomed);
 
@@ -179,7 +170,6 @@ export class Graph {
             .attr("height", Options.height)
             .call(_self.zoom)
             .append("g");
-
     }
 
     /**
@@ -212,7 +202,7 @@ export class Graph {
             .attr("id", function (d: any) {
                 return d.id;
             })
-            .call(_self.dragBehaviour);
+            .call(Options.dragBehaviour);
 
         Options.nodeElements.each(function (node) {
             node.draw(d3.select(this));
@@ -223,7 +213,7 @@ export class Graph {
             .data(Options.labelNodes).enter()
             .append("g")
             .classed("labelGroup", true)
-            .call(_self.dragBehaviour);
+            .call(Options.dragBehaviour);
 
         this.labelGroupElements.each(function (label) {
             var success = label.draw(d3.select(this));
@@ -278,7 +268,7 @@ export class Graph {
     }
 
     private addClickEvents = () => {
-        let executeModules = (clickedNode) => {
+        function executeModules(clickedNode) {
             Options.selectionModules.forEach(function (module) {
                 module.handle(clickedNode);
             });
@@ -346,8 +336,8 @@ export class Graph {
 
     private storeLinksOnNodes(nodes, links) {
         for (var i = 0, nodesLength = nodes.length; i < nodesLength; i++) {
-            var node = nodes[i],
-                connectedLinks = [];
+            let node = nodes[i];
+            let connectedLinks = [];
 
             // look for properties where this node is the domain or range
             for (var j = 0, linksLength = links.length; j < linksLength; j++) {
@@ -357,7 +347,6 @@ export class Graph {
                     connectedLinks.push(link);
                 }
             }
-
             node.links = connectedLinks;
         }
     }
@@ -369,9 +358,9 @@ export class Graph {
         });
 
         let d3Nodes = [].concat(classNodes).concat(labelNodes);
-        this.setPositionOfOldLabelsOnNewLabels(this.force.nodes(), labelNodes);
+        this.setPositionOfOldLabelsOnNewLabels(Options.force.nodes(), labelNodes);
 
-        this.force.nodes(d3Nodes)
+        Options.force.nodes(d3Nodes)
             .links(d3Links);
     }
 
@@ -399,7 +388,7 @@ export class Graph {
             this.zoom.event(this.graphContainer);
         }
 
-        this.force.charge(function (element) {
+        Options.force.charge(function (element) {
             var charge = Options.charge;
             if (ElementTools.isLabel(element)) {
                 charge *= 0.8;
@@ -411,7 +400,7 @@ export class Graph {
             .gravity(Options.gravity)
             .linkStrength(Options.linkStrength); // Flexibility of links
 
-        this.force.nodes().forEach(function (n) {
+        Options.force.nodes().forEach(function (n) {
             n.frozen = false;
         });
     }
@@ -448,11 +437,13 @@ export class Graph {
  * Loads all settings, removes the old graph (if it exists) and draws a new one.
  */
     start = () => {
-        this.force.stop();
+        Options.force.stop();
         this.loadGraphData();
         this.redrawGraph();
         this.update();
+        this.updateStyle();
     }
+
     reset = () => {
         this.zoom.translate([0, 0])
             .scale(1);
@@ -461,7 +452,7 @@ export class Graph {
     update = () => {
         this.refreshGraphData();
         this.refreshGraphStyle();
-        this.force.start();
+        Options.force.start();
         this.redrawContent();
     }
     reload = () => {
@@ -470,6 +461,6 @@ export class Graph {
     }
     updateStyle = () => {
         this.refreshGraphStyle();
-        this.force.start();
+        Options.force.start();
     }
 }

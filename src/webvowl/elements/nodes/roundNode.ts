@@ -135,7 +135,7 @@ export class RoundNode extends BaseNode {
         }
     }
 
-    private createTextBlock = () => {
+    private createTextBlock() {
         let textBlock = new CenteringTextElement(this.nodeElement, this.backgroundColor);
 
         let equivalentsString = this.equivalentsString;

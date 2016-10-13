@@ -10,6 +10,6 @@ export class RDFSResourceClass extends RoundNode {
         this.type = "rdfs:Resource";
     }
     draw(element) {
-        super.draw(element, ["rdf", "dashed"]);
+        return super.draw(element, ["rdf", "dashed"]);
     };
 }

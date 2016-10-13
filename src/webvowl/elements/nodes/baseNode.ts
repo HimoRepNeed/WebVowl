@@ -53,6 +53,10 @@ export class BaseNode extends BaseElement {
         return this._fixed;
     }
 
+    set fixed(val: boolean) {
+        this._fixed = val;
+    }
+
     private applyFixedLocationAttributes = () => {
         if (this._locked || this._pinned || this._frozen) {
             this._fixed = true;
@@ -61,7 +65,7 @@ export class BaseNode extends BaseElement {
         }
     }
 
-    collectCssClasses = () => {
+    collectCssClasses() {
         var cssClasses = [];
 
         if (typeof this.styleClass === "string") {
@@ -73,7 +77,8 @@ export class BaseNode extends BaseElement {
         return cssClasses;
     };
 
-    addMouseListeners = () => {
+    addMouseListeners() {
+        let _self = this;
         // Empty node
         if (!this.nodeElement) {
             console.warn(this);
@@ -81,11 +86,15 @@ export class BaseNode extends BaseElement {
         }
 
         this.nodeElement.selectAll("*")
-            .on("mouseover", this.onMouseOver)
-            .on("mouseout", this.onMouseOut);
+            .on("mouseover", function () {
+                _self.onMouseOver();
+            })
+            .on("mouseout", function () {
+                _self.onMouseOut();
+            });
     };
 
-    private onMouseOver = () => {
+    private onMouseOver() {
         if (this.mouseEntered) {
             return;
         }
@@ -105,7 +114,7 @@ export class BaseNode extends BaseElement {
         this.hoverHighlighting = val;
     }
 
-    private onMouseOut = () => {
+    private onMouseOut() {
         this.setHoverHighlighting(false);
         this.mouseEntered = false;
     }

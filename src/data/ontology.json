@@ -1,0 +1,208 @@
+{
+  "@graph" : [ {
+    "@id" : "_:b0",
+    "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b1",
+    "@type" : "http://www.w3.org/2002/07/owl#Restriction"
+  }, {
+    "@id" : "_:b12",
+    "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : 0
+  }, {
+    "@id" : "_:b13",
+    "@type" : "http://www.w3.org/2002/07/owl#Restriction"
+  }, {
+    "@id" : "_:b14",
+    "onProperty" : "http://ontology.onesourcetax.com/core/assignToDeliverable"
+  }, {
+    "@id" : "_:b15",
+    "onProperty" : "http://ontology.onesourcetax.com/core/sourcedFromApp"
+  }, {
+    "@id" : "_:b16",
+    "onProperty" : "http://ontology.onesourcetax.com/core/relatesToUnitProperties"
+  }, {
+    "@id" : "_:b17",
+    "onClass" : "http://ontology.onesourcetax.com/core/Purpose"
+  }, {
+    "@id" : "_:b18",
+    "http://www.w3.org/2002/07/owl#maxQualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b2",
+    "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : 0
+  }, {
+    "@id" : "_:b20",
+    "@type" : "http://www.w3.org/2002/07/owl#Restriction"
+  }, {
+    "@id" : "_:b21",
+    "onProperty" : "http://ontology.onesourcetax.com/core/hasPurpose"
+  }, {
+    "@id" : "_:b22",
+    "onClass" : "http://ontology.onesourcetax.com/core/SourceProduct"
+  }, {
+    "@id" : "_:b23",
+    "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b24",
+    "onClass" : "http://ontology.onesourcetax.com/core/Unit"
+  }, {
+    "@id" : "_:b26",
+    "@type" : "http://www.w3.org/2002/07/owl#Restriction"
+  }, {
+    "@id" : "_:b27",
+    "onProperty" : "http://ontology.onesourcetax.com/core/sourcedFromApp"
+  }, {
+    "@id" : "_:b28",
+    "@type" : "http://www.w3.org/2002/07/owl#Restriction"
+  }, {
+    "@id" : "_:b29",
+    "onProperty" : "http://ontology.onesourcetax.com/core/relatesToUnit"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "http://www.w3.org/2002/07/owl#Restriction"
+  }, {
+    "@id" : "_:b6",
+    "onClass" : "http://ontology.onesourcetax.com/core/Deliverable"
+  }, {
+    "@id" : "_:b7",
+    "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : 1
+  }, {
+    "@id" : "_:b8",
+    "onClass" : "http://ontology.onesourcetax.com/core/SourceProduct"
+  }, {
+    "@id" : "_:b9",
+    "onClass" : "http://ontology.onesourcetax.com/core/UnitProperties"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/",
+    "@type" : "http://www.w3.org/2002/07/owl#Ontology"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/Customer",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "subClassOf" : "_:b11"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/Deliverable",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "subClassOf" : "_:b25"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/EndDate",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "subClassOf" : "http://ontology.onesourcetax.com/core/Time"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/Period",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "subClassOf" : "http://ontology.onesourcetax.com/core/Time"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/Purpose",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "subClassOf" : "_:b19"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/Quarter",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "subClassOf" : "http://ontology.onesourcetax.com/core/Time"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/SourceProduct",
+    "@type" : "http://www.w3.org/2002/07/owl#Class"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/StartDate",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "subClassOf" : "http://ontology.onesourcetax.com/core/Time"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/TaxType",
+    "@type" : "http://www.w3.org/2002/07/owl#Class"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/Time",
+    "@type" : "http://www.w3.org/2002/07/owl#Class"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/Unit",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "subClassOf" : [ "_:b4", "_:b5" ]
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/UnitProperties",
+    "@type" : "http://www.w3.org/2002/07/owl#Class",
+    "subClassOf" : "_:b10"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/asOf",
+    "@type" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "domain" : "http://ontology.onesourcetax.com/core/UnitProperties",
+    "range" : "http://www.w3.org/2001/XMLSchema#dateTime"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/assignToDeliverable",
+    "@type" : "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "domain" : "http://ontology.onesourcetax.com/core/Purpose",
+    "range" : "http://ontology.onesourcetax.com/core/Deliverable"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/hasCode",
+    "@type" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "domain" : "http://ontology.onesourcetax.com/core/UnitProperties",
+    "range" : "http://www.w3.org/2001/XMLSchema#string"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/hasName",
+    "@type" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "domain" : "http://ontology.onesourcetax.com/core/UnitProperties",
+    "range" : "http://www.w3.org/2001/XMLSchema#string"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/hasPurpose",
+    "@type" : "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "domain" : "http://ontology.onesourcetax.com/core/Customer",
+    "range" : "http://ontology.onesourcetax.com/core/Purpose"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/hasTaxType",
+    "@type" : "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "domain" : "http://ontology.onesourcetax.com/core/Deliverable",
+    "range" : "http://ontology.onesourcetax.com/core/TaxType"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/hasUnitType",
+    "@type" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "domain" : "http://ontology.onesourcetax.com/core/UnitProperties",
+    "range" : "http://www.w3.org/2001/XMLSchema#string"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/isLocatedIn",
+    "@type" : "http://www.w3.org/2002/07/owl#DatatypeProperty",
+    "domain" : "http://ontology.onesourcetax.com/core/UnitProperties",
+    "range" : "http://www.w3.org/2001/XMLSchema#string"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/relatesToUnit",
+    "@type" : "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "domain" : "http://ontology.onesourcetax.com/core/UnitProperties",
+    "range" : "http://ontology.onesourcetax.com/core/Unit"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/relatesToUnitProperties",
+    "@type" : "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "domain" : "http://ontology.onesourcetax.com/core/Deliverable",
+    "range" : "http://ontology.onesourcetax.com/core/UnitProperties"
+  }, {
+    "@id" : "http://ontology.onesourcetax.com/core/sourcedFromApp",
+    "@type" : "http://www.w3.org/2002/07/owl#ObjectProperty",
+    "domain" : "http://ontology.onesourcetax.com/core/Unit",
+    "range" : "http://ontology.onesourcetax.com/core/SourceProduct"
+  } ],
+  "@context" : {
+    "subClassOf" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#subClassOf",
+      "@type" : "@id"
+    },
+    "minQualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#minQualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "range" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#range",
+      "@type" : "@id"
+    },
+    "domain" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#domain",
+      "@type" : "@id"
+    },
+    "onClass" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onClass",
+      "@type" : "@id"
+    },
+    "onProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onProperty",
+      "@type" : "@id"
+    },
+    "maxQualifiedCardinality" : {
+      "@id" : "http://www.w3.org/2002/07/owl#maxQualifiedCardinality",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  }
+}

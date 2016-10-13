@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://data.onesourcetax.com/customer-1#"
+     xml:base="http://data.onesourcetax.com/customer-1"
+     xmlns:core="http://ontology.onesourcetax.com/core/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://data.onesourcetax.com/customer-1">
+        <owl:imports rdf:resource="http://ontology.onesourcetax.com/core/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.onesourcetax.com/core/assignToDeliverable -->
+
+    <owl:AnnotationProperty rdf:about="http://ontology.onesourcetax.com/core/assignToDeliverable"/>
+    
+
+
+    <!-- http://ontology.onesourcetax.com/core/assignedToBusiness -->
+
+    <owl:AnnotationProperty rdf:about="http://ontology.onesourcetax.com/core/assignedToBusiness"/>
+    
+
+
+    <!-- http://ontology.onesourcetax.com/core/assignedToProduct -->
+
+    <owl:AnnotationProperty rdf:about="http://ontology.onesourcetax.com/core/assignedToProduct"/>
+    
+
+
+    <!-- http://ontology.onesourcetax.com/core/assignedToTime -->
+
+    <owl:AnnotationProperty rdf:about="http://ontology.onesourcetax.com/core/assignedToTime"/>
+    
+
+
+    <!-- http://ontology.onesourcetax.com/core/hasBusinessType -->
+
+    <owl:AnnotationProperty rdf:about="http://ontology.onesourcetax.com/core/hasBusinessType"/>
+    
+
+
+    <!-- http://ontology.onesourcetax.com/core/hasCode -->
+
+    <owl:AnnotationProperty rdf:about="http://ontology.onesourcetax.com/core/hasCode"/>
+    
+
+
+    <!-- http://ontology.onesourcetax.com/core/hasName -->
+
+    <owl:AnnotationProperty rdf:about="http://ontology.onesourcetax.com/core/hasName"/>
+    
+
+
+    <!-- http://ontology.onesourcetax.com/core/hasPurpose -->
+
+    <owl:AnnotationProperty rdf:about="http://ontology.onesourcetax.com/core/hasPurpose"/>
+    
+
+
+    <!-- http://ontology.onesourcetax.com/core/isLocatedIn -->
+
+    <owl:AnnotationProperty rdf:about="http://ontology.onesourcetax.com/core/isLocatedIn"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:Cox -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:Cox">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Customer"/>
+        <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cox</core:hasName>
+        <core:hasPurpose rdf:resource="http://data.onesourcetax.com/customer-1:EstimatedPayment"/>
+        <core:hasPurpose rdf:resource="http://data.onesourcetax.com/customer-1:IncomeTax"/>
+        <core:hasPurpose rdf:resource="http://data.onesourcetax.com/customer-1:TaxProvision"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:Deliverable-1 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:Deliverable-1">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Deliverable"/>
+        <core:relatesToUnitProperties rdf:resource="http://data.onesourcetax.com/customer-1:UnitProperties-1"/>
+        <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Income Tax Return</core:hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:Deliverable-10 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:Deliverable-10">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Deliverable"/>
+        <core:relatesToUnitProperties rdf:resource="http://data.onesourcetax.com/customer-1:UnitProperties-10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:Deliverable-2 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:Deliverable-2">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Deliverable"/>
+        <core:relatesToUnitProperties rdf:resource="http://data.onesourcetax.com/customer-1:UnitProperties-2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:Deliverable-3 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:Deliverable-3">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Deliverable"/>
+        <core:relatesToUnitProperties rdf:resource="http://data.onesourcetax.com/customer-1:UnitProperties-3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:Deliverable-4 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:Deliverable-4">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Deliverable"/>
+        <core:relatesToUnitProperties rdf:resource="http://data.onesourcetax.com/customer-1:UnitProperties-4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:Deliverable-5 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:Deliverable-5">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Deliverable"/>
+        <core:relatesToUnitProperties rdf:resource="http://data.onesourcetax.com/customer-1:UnitProperties-5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:Deliverable-6 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:Deliverable-6">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Deliverable"/>
+        <core:relatesToUnitProperties rdf:resource="http://data.onesourcetax.com/customer-1:UnitProperties-6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:Deliverable-7 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:Deliverable-7">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Deliverable"/>
+        <core:relatesToUnitProperties rdf:resource="http://data.onesourcetax.com/customer-1:UnitProperties-7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:Deliverable-8 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:Deliverable-8">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Deliverable"/>
+        <core:relatesToUnitProperties rdf:resource="http://data.onesourcetax.com/customer-1:UnitProperties-8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:EstimatedPayment -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:EstimatedPayment">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Purpose"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:IncomeTax -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:IncomeTax">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Purpose"/>
+        <core:assignToDeliverable rdf:resource="http://data.onesourcetax.com/customer-1:Deliverable-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:TaxProvision -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:TaxProvision">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Purpose"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:Unit-1 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:Unit-1">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:UnitProperties-1 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-1">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
+        <core:relatesToUnit rdf:resource="http://data.onesourcetax.com/customer-1:Unit-1"/>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015</core:asOf>
+        <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0000000001</core:hasCode>
+        <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CEI - CAP Audit Company</core:hasName>
+        <core:hasUnitType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subsidiary</core:hasUnitType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:UnitProperties-10 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-10">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:UnitProperties-2 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-2">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015</core:asOf>
+        <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1AD1110009</core:hasCode>
+        <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manheim&apos;s Pennsylvania Auction Services, Inc.</core:hasName>
+        <core:isLocatedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Domestic</core:isLocatedIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:UnitProperties-3 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-3">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015</core:asOf>
+        <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0000000003</core:hasCode>
+        <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CAP - NonConsolidated</core:hasName>
+        <core:hasUnitType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subsidiary</core:hasUnitType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:UnitProperties-4 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-4">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015</core:asOf>
+        <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1AG0000010</core:hasCode>
+        <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Greater Orlando Auto Auction, Inc.</core:hasName>
+        <core:isLocatedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Domestic</core:isLocatedIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:UnitProperties-5 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-5">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015</core:asOf>
+        <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0000000004</core:hasCode>
+        <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XTIME - CAP Audit Company</core:hasName>
+        <core:hasUnitType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subsidiary</core:hasUnitType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:UnitProperties-6 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-6">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015</core:asOf>
+        <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AI363L</core:hasCode>
+        <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NextGear Capital UK Limited</core:hasName>
+        <core:isLocatedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Foreign</core:isLocatedIn>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:UnitProperties-7 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-7">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
+        <core:relatesToUnit rdf:resource="http://data.onesourcetax.com/customer-1:Unit-1"/>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014</core:asOf>
+        <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0000000001</core:hasCode>
+        <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CEI - CAP Audit Company</core:hasName>
+        <core:hasUnitType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subsidiary</core:hasUnitType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://data.onesourcetax.com/customer-1:UnitProperties-8 -->
+
+    <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-8">
+        <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015</core:asOf>
+        <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AI364L</core:hasCode>
+        <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cox Automotive International S.a.r.l.</core:hasName>
+        <core:isLocatedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Foreign</core:isLocatedIn>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+

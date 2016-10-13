@@ -44,7 +44,7 @@ export class BaseProperty extends BaseElement {
         return this.linkType !== "dashed";
     };
 
-    markerId = () => {
+    markerId() {
         return "marker" + this.id;
     };
 
@@ -65,7 +65,7 @@ export class BaseProperty extends BaseElement {
     }
 
     draw(labelGroup) {
-        let attachLabel = (property) => {
+        function attachLabel(property) {
             var labelContainer = labelGroup.append("g")
                 .datum(property)
                 .classed("label", true)
@@ -91,7 +91,7 @@ export class BaseProperty extends BaseElement {
         }
 
         if (this.pinned) {
-            this.drawPin;
+            this.drawPin();
         } else if (this._inverse && this._inverse.pinned) {
             this._inverse.drawPin();
         }
@@ -108,14 +108,14 @@ export class BaseProperty extends BaseElement {
             .attr("width", _self.labelWidth)
             .attr("height", _self.labelHeight)
             .on("mouseover", function () {
-                _self.onMouseOver;
+                _self.onMouseOver();
             })
             .on("mouseout", function () {
-                _self.onMouseOut;
+                _self.onMouseOut();
             });
 
         rect.append("title")
-            .text(_self.labelForCurrentLanguage);
+            .text(_self.labelForCurrentLanguage());
 
         if (_self.visualAttributes) {
             rect.classed(_self.visualAttributes, true);
@@ -125,22 +125,22 @@ export class BaseProperty extends BaseElement {
         }
     };
 
-    foreground = () => {
-        var selectedLabelGroup = this.labelElement.node.parentNode,
-            labelContainer = selectedLabelGroup.parentNode,
-            selectedLinkGroup = this.linkGroup.node,
-            linkContainer = this.linkGroup.node.parentNode;
+    foreground() {
+        let selectedLabelGroup = this.labelElement.node().parentNode;
+        let labelContainer = selectedLabelGroup.parentNode;
+        let selectedLinkGroup = this.linkGroup.node();
+        let linkContainer = this.linkGroup.node().parentNode;
 
         // Append hovered element as last child to the container list.
         labelContainer.appendChild(selectedLabelGroup);
         linkContainer.appendChild(selectedLinkGroup);
     };
 
-    drawLabel = (labelContainer) => {
+    drawLabel(labelContainer) {
         this.addRect(labelContainer);
 
         var textElement = new CenteringTextElement(labelContainer, this.backgroundColor);
-        textElement.addText(this.labelForCurrentLanguage);
+        textElement.addText(this.labelForCurrentLanguage());
         textElement.addSubText(this.indicationString());
         this.addEquivalentsToLabel(textElement);
     };
@@ -185,7 +185,7 @@ export class BaseProperty extends BaseElement {
         }
     };
 
-    setHighlighting = (enable) => {
+    setHighlighting(enable) {
         if (this.labelElement) {
             this.labelElement.select("rect").classed("hovered", enable);
         }
@@ -248,7 +248,7 @@ export class BaseProperty extends BaseElement {
     }
 
 
-    drawPin = () => {
+    drawPin() {
         this.pinned = true;
         this.pinGroupElement = DrawTools.drawPin(this.labelElement(), 20, -25, this.removePin);
     };

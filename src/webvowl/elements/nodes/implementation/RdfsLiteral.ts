@@ -11,6 +11,6 @@ export class RDFSLiteralNode extends DatatypeNode {
     }
 
     draw(element) {
-        super.draw(element, ["dashed"]);
+        return super.draw(element, ["dashed"]);
     };
 }

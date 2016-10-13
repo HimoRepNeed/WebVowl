@@ -18,9 +18,9 @@ export class ArrowLink extends PlainLink {
         //PlainLink.prototype.draw.apply(this, arguments);
 
         // attach the markers to the link
-        linkGroup.attr("marker-end", "url(#" + property.markerId + ")");
+        linkGroup.attr("marker-end", "url(#" + property.markerId() + ")");
         if (inverse) {
-            linkGroup.attr("marker-start", "url(#" + inverse.markerId + ")");
+            linkGroup.attr("marker-start", "url(#" + inverse.markerId() + ")");
         }
     }
 

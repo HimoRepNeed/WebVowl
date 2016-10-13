@@ -10,6 +10,6 @@ export class OWLThing extends RoundNode {
     }
 
     draw(element) {
-        super.draw(element, ['white', 'dashed']);
+        return super.draw(element, ['white', 'dashed']);
     }
 }

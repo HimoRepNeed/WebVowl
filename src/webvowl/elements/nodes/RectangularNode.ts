@@ -36,8 +36,8 @@ export class RectangularNode extends BaseNode {
     };
 
     draw(parentElement, additionalCssClasses) {
-        var textBlock,
-            cssClasses = this.collectCssClasses();
+        let textBlock;
+        let cssClasses = this.collectCssClasses();
 
         this.nodeElement = parentElement;
 
@@ -45,10 +45,10 @@ export class RectangularNode extends BaseNode {
             cssClasses = cssClasses.concat(additionalCssClasses);
         }
         DrawTools.appendRectangularClass(parentElement, this.width, this.height, cssClasses,
-            this.labelForCurrentLanguage, this.backgroundColor);
+            this.labelForCurrentLanguage(), this.backgroundColor);
 
         textBlock = new CenteringTextElement(parentElement, this.backgroundColor);
-        textBlock.addText(this.labelForCurrentLanguage);
+        textBlock.addText(this.labelForCurrentLanguage());
 
         this.addMouseListeners();
 

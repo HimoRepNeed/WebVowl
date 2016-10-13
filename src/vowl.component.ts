@@ -14,7 +14,7 @@ export class VowlController {
 
 
     constructor() {
-        this.vowldata = muto; //Vowl.FromJSON((owl2));
+        this.vowldata = owl2; //Vowl.FromJSON((owl2));
     }
 
     $onInit = () => {

@@ -9,8 +9,8 @@ export class Options {
     static charge: number = -500;
     static gravity: number = 0.025;
     static linkStrength: number = 1;
-    static height: number = 1050;
-    static width: number = 1400;
+    static height: number = 800;
+    static width: number = 1500;
     static selectionModules = [];
     static filterModules = [];
     static minMagnification: number = 0.1;
@@ -23,6 +23,9 @@ export class Options {
     static links;
     static properties;
     static unfilteredData;
+
+    static force;
+    static dragBehaviour;
 
     static nodeElements;
 }

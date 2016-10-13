@@ -187,14 +187,14 @@ export var muto = {
         "baseIri": "http://owl2vowl.de",
         "id": "2",
         "label": {
-            "undefined": "Thing"
+            "IRI-based": "Thing"
         }
     }, {
         "iri": "http://www.w3.org/2002/07/owl#Thing",
         "baseIri": "http://owl2vowl.de",
         "id": "13",
         "label": {
-            "undefined": "Thing"
+            "IRI-based": "Thing"
         }
     }, {
         "iri": "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -208,7 +208,7 @@ export var muto = {
         "baseIri": "http://owl2vowl.de",
         "id": "18",
         "label": {
-            "undefined": "Thing"
+            "IRI-based": "Thing"
         }
     }, {
         "iri": "http://www.w3.org/2000/01/rdf-schema#Literal",

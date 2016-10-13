@@ -11,7 +11,7 @@ export class OWLDisjointWith extends BaseProperty {
         this.type = 'owl:disjointWith';
     }
 
-    drawLabel = (labelContainer) => {
+    drawLabel(labelContainer) {
         this.addRect(labelContainer);
 
         labelContainer.append("circle")
