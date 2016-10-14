@@ -9,8 +9,8 @@ export class Options {
     static charge: number = -500;
     static gravity: number = 0.025;
     static linkStrength: number = 1;
-    static height: number = 800;
-    static width: number = 1500;
+    static height: number = 940;
+    static width: number = 1890;
     static selectionModules = [];
     static filterModules = [];
     static minMagnification: number = 0.1;

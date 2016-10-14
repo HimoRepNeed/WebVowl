@@ -8,7 +8,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://data.onesourcetax.com/customer-1">
-        <owl:imports rdfs:resource="http://ontology.onesourcetax.com/core/"/>
+        <owl:imports rdf:resource="http://ontology.onesourcetax.com/core/"/>
     </owl:Ontology>
     
 
@@ -221,7 +221,7 @@
     <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-1">
         <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
         <core:relatesToUnit rdf:resource="http://data.onesourcetax.com/customer-1:Unit-1"/>
-        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015</core:asOf>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</core:asOf>
         <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0000000001</core:hasCode>
         <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CEI - CAP Audit Company</core:hasName>
         <core:hasUnitType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subsidiary</core:hasUnitType>
@@ -241,7 +241,7 @@
 
     <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-2">
         <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
-        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015</core:asOf>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</core:asOf>
         <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1AD1110009</core:hasCode>
         <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manheim&apos;s Pennsylvania Auction Services, Inc.</core:hasName>
         <core:isLocatedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Domestic</core:isLocatedIn>
@@ -253,7 +253,7 @@
 
     <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-3">
         <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
-        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015</core:asOf>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</core:asOf>
         <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0000000003</core:hasCode>
         <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CAP - NonConsolidated</core:hasName>
         <core:hasUnitType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subsidiary</core:hasUnitType>
@@ -265,7 +265,7 @@
 
     <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-4">
         <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
-        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-01-01</core:asOf>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</core:asOf>
         <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1AG0000010</core:hasCode>
         <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Greater Orlando Auto Auction, Inc.</core:hasName>
         <core:isLocatedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Domestic</core:isLocatedIn>
@@ -277,7 +277,7 @@
 
     <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-5">
         <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
-        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-01-01</core:asOf>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</core:asOf>
         <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0000000004</core:hasCode>
         <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XTIME - CAP Audit Company</core:hasName>
         <core:hasUnitType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subsidiary</core:hasUnitType>
@@ -289,7 +289,7 @@
 
     <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-6">
         <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
-        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-01-01</core:asOf>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</core:asOf>
         <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AI363L</core:hasCode>
         <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NextGear Capital UK Limited</core:hasName>
         <core:isLocatedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Foreign</core:isLocatedIn>
@@ -302,7 +302,7 @@
     <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-7">
         <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
         <core:relatesToUnit rdf:resource="http://data.onesourcetax.com/customer-1:Unit-1"/>
-        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-01-01</core:asOf>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014</core:asOf>
         <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0000000001</core:hasCode>
         <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CEI - CAP Audit Company</core:hasName>
         <core:hasUnitType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subsidiary</core:hasUnitType>
@@ -314,7 +314,7 @@
 
     <owl:NamedIndividual rdf:about="http://data.onesourcetax.com/customer-1:UnitProperties-8">
         <rdf:type rdf:resource="http://ontology.onesourcetax.com/core/UnitProperties"/>
-        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2015-01-01</core:asOf>
+        <core:asOf rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2015</core:asOf>
         <core:hasCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AI364L</core:hasCode>
         <core:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cox Automotive International S.a.r.l.</core:hasName>
         <core:isLocatedIn rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Foreign</core:isLocatedIn>
@@ -324,3 +324,4 @@
 
 
 <!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+

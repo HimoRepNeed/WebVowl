@@ -12,6 +12,7 @@ import { OWLSymmetricProperty } from './implementation/OwlSymmetricproperty'
 import { OWLSomeValuesFromProperty } from './implementation/OwlSomeValuesFromProperty'
 import { OWLTransitiveProperty } from './implementation/OwlTransitiveProperty'
 import { RDFProperty } from './implementation/RdfProperty'
+import { OWLIndividualProperty } from './implementation/OwlIndividualProperty'
 
 
 export class PropertyFactory {
@@ -59,6 +60,9 @@ export class PropertyFactory {
         }//
         else if (type === 'rdf:property') {
             return new RDFProperty(graph);
+        }//
+        else if (type === 'owl:individualproperty') {
+            return new OWLIndividualProperty(graph);
         }
 
     }

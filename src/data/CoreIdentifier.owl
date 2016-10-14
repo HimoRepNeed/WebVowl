@@ -172,39 +172,7 @@
 
     <!-- http://ontology.onesourcetax.com/core/EndDate -->
 
-    <owl:Class rdf:about="http://ontology.onesourcetax.com/core/EndDate">
-        <rdfs:subClassOf rdf:resource="http://ontology.onesourcetax.com/core/Time"/>
-    </owl:Class>
-    
-
-
-    <!-- http://ontology.onesourcetax.com/core/Period -->
-
-    <owl:Class rdf:about="http://ontology.onesourcetax.com/core/Period">
-        <rdfs:subClassOf rdf:resource="http://ontology.onesourcetax.com/core/Time"/>
-    </owl:Class>
-    
-
-
-    <!-- http://ontology.onesourcetax.com/core/Purpose -->
-
-    <owl:Class rdf:about="http://ontology.onesourcetax.com/core/Purpose">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://ontology.onesourcetax.com/core/assignToDeliverable"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://ontology.onesourcetax.com/core/Deliverable"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://ontology.onesourcetax.com/core/Quarter -->
-
-    <owl:Class rdf:about="http://ontology.onesourcetax.com/core/Quarter">
-        <rdfs:subClassOf rdf:resource="http://ontology.onesourcetax.com/core/Time"/>
-    </owl:Class>
+   
     
 
 
@@ -216,9 +184,6 @@
 
     <!-- http://ontology.onesourcetax.com/core/StartDate -->
 
-    <owl:Class rdf:about="http://ontology.onesourcetax.com/core/StartDate">
-        <rdfs:subClassOf rdf:resource="http://ontology.onesourcetax.com/core/Time"/>
-    </owl:Class>
     
 
 
@@ -230,8 +195,6 @@
 
     <!-- http://ontology.onesourcetax.com/core/Time -->
 
-    <owl:Class rdf:about="http://ontology.onesourcetax.com/core/Time"/>
-    
 
 
     <!-- http://ontology.onesourcetax.com/core/Unit -->

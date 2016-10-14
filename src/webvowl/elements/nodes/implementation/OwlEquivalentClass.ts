@@ -22,7 +22,7 @@ export class OWLEquivalentClass extends RoundNode {
 
         // draw the outer circle at first and afterwards the inner circle
         DrawTools.appendCircularClass(parentElement, this.actualRadius(), ["white", "embedded"]);
-        DrawTools.appendCircularClass(parentElement, this.actualRadius() - this.CIRCLE_SIZE_DIFFERENCE, cssClasses, this.labelForCurrentLanguage, this.backgroundColor);
+        DrawTools.appendCircularClass(parentElement, this.actualRadius() - this.CIRCLE_SIZE_DIFFERENCE, cssClasses, this.labelForCurrentLanguage(), this.backgroundColor);
 
         this.postDrawActions();
     }

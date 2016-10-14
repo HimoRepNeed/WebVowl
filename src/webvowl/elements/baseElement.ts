@@ -75,7 +75,7 @@ export class BaseElement implements IBaseElement {
     }
 
     labelForCurrentLanguage() {
-        var preferredLanguage = this.graph && this.graph.language ? this.graph.language : null;
+        var preferredLanguage = this.graph && this.graph.language ? this.graph.language : 'default';
         return LanguageTools.textInLanguage(this.label, preferredLanguage);
     }
 

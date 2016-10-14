@@ -13,13 +13,17 @@ export class Parser {
     static classMap;
     static propertyMap;
     static graph;
-
+    static ontologyData;
 
     static parse = (ontologyData, graph) => {
         if (!ontologyData || !graph) {
             return;
         }
         Parser.graph = graph;
+        ontologyData.property = ontologyData.property || [];
+        ontologyData.propertyAttribute = ontologyData.propertyAttribute || [];
+        Parser.ontologyData = ontologyData;
+
         let classes = Parser.combineClasses(ontologyData.class, ontologyData.classAttribute);
         let datatypes = Parser.combineClasses(ontologyData.datatype, ontologyData.datatypeAttribute);
         let combinedClassesAndDatatypes = classes.concat(datatypes);
@@ -49,6 +53,7 @@ export class Parser {
         //let prototypeMap = Parser.createLowerCasePrototypeMap(nodePrototypeMap);
 
         if (baseObject) {
+            let count = 0;
             angular.forEach(baseObject, function (c) {
                 let matchingAttribute;
 
@@ -81,12 +86,64 @@ export class Parser {
 
                         if (c.individuals) {
                             angular.forEach(c.individuals, function (ind) {
-                                let individualnode = NodeFactory.GetNode(Parser.graph, c.type.toLowerCase());
-                                individualnode.label = ind.label;
+                                let individualnode = NodeFactory.GetNode(Parser.graph, 'owl:instanceclass');
+                                individualnode.label = node.label;
                                 individualnode.iri = ind.iri;
+                                individualnode.id = 'node-annt' + count;
+                                individualnode.tooltip = ind.iri;
+                                //
+                                combinations.push(individualnode);
+                                let property = {
+                                    id: 'prop' + count,
+                                    type: 'owl:individualProperty'
+                                }
+
+                                let propertyAttribute = {
+                                    domain: individualnode.id,
+                                    range: node.id,
+                                    id: 'prop' + count,
+                                    label: { 'IRI-based': 'Instance Of' }
+                                }
+
+                                Parser.ontologyData.property.push(property);
+                                Parser.ontologyData.propertyAttribute.push(propertyAttribute);
+
+                                if (ind.annotations) {
+                                    individualnode.annotations = ind.annotations;
+                                    let anntcount = 0;
+                                    for (let a in individualnode.annotations) {
+                                        let aa = individualnode.annotations[a];
+                                        let aaa = aa[0];
+                                        let annotationNode = NodeFactory.GetNode(Parser.graph, 'rdfs:datatype');
+                                        annotationNode.label = aaa.identifier;
+                                        annotationNode.iri = aaa.identifier;
+                                        annotationNode.id = 'node-annotationt' + count;
+                                        combinations.push(annotationNode);
+                                        let p = {
+                                            id: 'annotation-' + anntcount,
+                                            type: 'owl:DatatypeProperty'
+                                        }
+                                        let pa = {
+                                            domain: individualnode.id,
+                                            id: 'annotation-' + anntcount,
+                                            range: annotationNode.id,
+                                            label: aaa.identifier
+                                        }
+                                        // Parser.ontologyData.property.push(p);
+                                        // Parser.ontologyData.propertyAttribute.push(pa);
+                                        anntcount = anntcount + 1;
+                                    }
+                                }
+
+
+
+
+                                //
                                 node.individuals.push(individualnode);
+                                count = count + 1;
                             })
                         }
+
 
                         if (c.attributes) {
                             let dedupAttributes = d3.set(c.attributes.concat(c.attributes));

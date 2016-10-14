@@ -1,6 +1,7 @@
 import { BaseNode } from './baseNode';
 import { CenteringTextElement } from '../../util/centeringtextElement'
 import { DrawTools } from '../drawTools';
+//import { OWLInstanceClass } from './implementation/OwlInstanceClass';
 
 export class RoundNode extends BaseNode {
     collapsible: boolean = false;
@@ -8,6 +9,7 @@ export class RoundNode extends BaseNode {
     collapsingGroupElement;
     pinGroupElement;
     textBlock;
+    tooltip: string;
 
     constructor(protected graph) {
         super(graph);
@@ -74,13 +76,13 @@ export class RoundNode extends BaseNode {
     }
 
     drawCollapsingButton = () => {
-
-        this.collapsingGroupElement = this.nodeElement()
+        let _self = this;
+        this.collapsingGroupElement = this.nodeElement
             .append("g")
             .classed("hidden-in-export", true)
             .attr("transform", function () {
-                var dx = (-2 / 5) * this.actualRadius(),
-                    dy = (1 / 2) * this.actualRadius();
+                var dx = (-2 / 5) * _self.actualRadius(),
+                    dy = (1 / 2) * _self.actualRadius();
                 return "translate(" + dx + "," + dy + ")";
             });
 
@@ -117,9 +119,17 @@ export class RoundNode extends BaseNode {
         if (additionalCssClasses instanceof Array) {
             cssClasses = cssClasses.concat(additionalCssClasses);
         }
-        DrawTools.appendCircularClass(parentElement, this.actualRadius(),
-            cssClasses, this.labelForCurrentLanguage, this.backgroundColor);
+        // let tooltiptext;
 
+        // if (this instanceof OWLInstanceClass) {
+        //     tooltiptext = this.iri;
+        // } else {
+        //     this.labelForCurrentLanguage();
+        // }
+        DrawTools.appendCircularClass(parentElement, this.actualRadius(),
+            cssClasses, this.tooltip || this.labelForCurrentLanguage(), this.backgroundColor);
+
+        //this.individuals && this.individuals.length > 0 ? this.collapsible = true : this.collapsible = false;
         this.postDrawActions();
     }
 
@@ -138,7 +148,7 @@ export class RoundNode extends BaseNode {
     private createTextBlock() {
         let textBlock = new CenteringTextElement(this.nodeElement, this.backgroundColor);
 
-        let equivalentsString = this.equivalentsString;
+        let equivalentsString = this.equivalentsString();
         let suffixForFollowingEquivalents = equivalentsString ? "," : "";
 
         textBlock.addText(this.labelForCurrentLanguage(), "", suffixForFollowingEquivalents);

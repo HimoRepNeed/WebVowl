@@ -13,6 +13,7 @@ import { OWLUnionOf } from './implementation/OwlunionOf'
 import { OWLNothing } from './implementation/OwlNothing'
 import { RDFSClass } from './implementation/RdfsClass'
 import { RDFSResourceClass } from './implementation/RdfsResource'
+import { OWLInstanceClass } from './implementation/OwlinstanceClass'
 
 export class NodeFactory {
     static GetNode(graph, type: string): any {
@@ -72,6 +73,11 @@ export class NodeFactory {
         else if (type === 'rdfs:resource') {
             let rdfsResource = new RDFSResourceClass(graph);
             return rdfsResource;
+        }
+        //
+        else if (type === 'owl:instanceclass') {
+            let owlinstanceClass = new OWLInstanceClass(graph);
+            return owlinstanceClass;
         }
     }
 }
