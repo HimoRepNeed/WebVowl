@@ -4,6 +4,9 @@ import { PlainLink } from '../elements/links/PlainLink';
 import { Set } from '../util/set';
 import { OWLDisjointWith } from '../elements/properties/implementation/OwlDisjointWith'
 import { SetOperatorProperty } from '../elements/properties/implementation/SetOperatorProperty'
+import { OWLIndividualProperty } from '../elements/properties/implementation/OwlIndividualProperty'
+import { DashedArrowLink } from '../elements/links/DashedArrowLink';
+
 
 export class LinkCreator {
 
@@ -110,6 +113,8 @@ export class LinkCreator {
             return new PlainLink(domain, range, property);
         } else if (property instanceof SetOperatorProperty) {
             return new BoxArrowLink(domain, range, property);
+        } else if (property instanceof OWLIndividualProperty) {
+            return new DashedArrowLink(domain, range, property);
         }
         return new ArrowLink(domain, range, property);
     }
