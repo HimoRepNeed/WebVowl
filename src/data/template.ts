@@ -1,163 +1,165 @@
-export var template = {
-    "namespace": [
-        {
-            "name": "",
-            "iri": ""
-        }
-    ],
-    "header": {
-        "languages": [
-            "all",
-            "occurring",
-            "languages"
+namespace TRVOWL.data {
+    export var template = {
+        "namespace": [
+            {
+                "name": "",
+                "iri": ""
+            }
         ],
-        "title": {
-            "language": "label"
-        },
-        "iri": "",
-        "version": "",
-        "author": [
-            "Author One",
-            "Author Two"
-        ],
-        "description": {
-            "language": "label"
-        },
-        "other": {
-            "someIdentifier": [
-                {
-                    "identifier": "someIdentifier",
-                    "language": "undefined",
-                    "value": "http://an.iri/",
-                    "type": "iri"
-                }
+        "header": {
+            "languages": [
+                "all",
+                "occurring",
+                "languages"
             ],
-            "someOtherIdentifier": [
-                {
-                    "identifier": "someOtherIdentifier",
-                    "language": "undefined",
-                    "value": "Some person",
-                    "type": "label"
-                }
-            ]
-        }
-    },
-    "metrics": {
-        "classCount": 40,
-        "datatypeCount": 13,
-        "objectPropertyCount": 23,
-        "datatypePropertyCount": 13,
-        "propertyCount": 36,
-        "nodeCount": 53,
-        "axiomCount": 216,
-        "individualCount": 8
-    },
-    "class": [
-        {
-            "id": "",
-            "type": ""
-        }
-    ],
-    "classAttribute": [
-        {
-            "id": "",
-            "label": "",
-            "iri": "",
-            "individuals": [
-                {
-                    "iri": "",
-                    "labels": {
-                        "language": "label"
-                    },
-                    "annotations": {}
-                }
-            ],
-            "comment": "",
-            "equivalent": [
-                ""
-            ],
-            "union": [
-                ""
-            ],
-            "intersection": [
-                ""
-            ],
-            "complement": [
-                ""
-            ],
-            "attributes": [
-                "deprecated",
-                "external",
-                "datatype",
-                "object",
-                "rdf"
-            ]
-        }
-    ],
-    "datatype": [
-        {
-            "id": "",
-            "type": ""
-        }
-    ],
-    "datatypeAttribute": [
-        {
-            "id": "",
-            "label": {
+            "title": {
                 "language": "label"
             },
             "iri": "",
-            "individuals": [
-                {
-                    "iri": "",
-                    "labels": {
-                        "language": "label"
-                    },
-                    "annotations": {}
-                }
+            "version": "",
+            "author": [
+                "Author One",
+                "Author Two"
             ],
-            "comment": "",
-            "equivalent": [
-                ""
-            ]
-        }
-    ],
-    "property": [
-        {
-            "id": ""
-        }
-    ],
-    "propertyAttribute": [
-        {
-            "id": "",
-            "domain": "",
-            "range": "",
-            "inverse": "",
-            "label": {
+            "description": {
                 "language": "label"
             },
-            "type": "",
-            "comment": "",
-            "cardinality": "",
-            "minCardinality": "",
-            "maxCardinality": "",
-            "subproperty": [
-                ""
-            ],
-            "equivalent": [
-                ""
-            ],
-            "attributes": [
-                "deprecated",
-                "external",
-                "datatype",
-                "object",
-                "rdf",
-                "transitive",
-                "functional",
-                "inverse functional",
-                "symmetric"
-            ]
-        }
-    ]
+            "other": {
+                "someIdentifier": [
+                    {
+                        "identifier": "someIdentifier",
+                        "language": "undefined",
+                        "value": "http://an.iri/",
+                        "type": "iri"
+                    }
+                ],
+                "someOtherIdentifier": [
+                    {
+                        "identifier": "someOtherIdentifier",
+                        "language": "undefined",
+                        "value": "Some person",
+                        "type": "label"
+                    }
+                ]
+            }
+        },
+        "metrics": {
+            "classCount": 40,
+            "datatypeCount": 13,
+            "objectPropertyCount": 23,
+            "datatypePropertyCount": 13,
+            "propertyCount": 36,
+            "nodeCount": 53,
+            "axiomCount": 216,
+            "individualCount": 8
+        },
+        "class": [
+            {
+                "id": "",
+                "type": ""
+            }
+        ],
+        "classAttribute": [
+            {
+                "id": "",
+                "label": "",
+                "iri": "",
+                "individuals": [
+                    {
+                        "iri": "",
+                        "labels": {
+                            "language": "label"
+                        },
+                        "annotations": {}
+                    }
+                ],
+                "comment": "",
+                "equivalent": [
+                    ""
+                ],
+                "union": [
+                    ""
+                ],
+                "intersection": [
+                    ""
+                ],
+                "complement": [
+                    ""
+                ],
+                "attributes": [
+                    "deprecated",
+                    "external",
+                    "datatype",
+                    "object",
+                    "rdf"
+                ]
+            }
+        ],
+        "datatype": [
+            {
+                "id": "",
+                "type": ""
+            }
+        ],
+        "datatypeAttribute": [
+            {
+                "id": "",
+                "label": {
+                    "language": "label"
+                },
+                "iri": "",
+                "individuals": [
+                    {
+                        "iri": "",
+                        "labels": {
+                            "language": "label"
+                        },
+                        "annotations": {}
+                    }
+                ],
+                "comment": "",
+                "equivalent": [
+                    ""
+                ]
+            }
+        ],
+        "property": [
+            {
+                "id": ""
+            }
+        ],
+        "propertyAttribute": [
+            {
+                "id": "",
+                "domain": "",
+                "range": "",
+                "inverse": "",
+                "label": {
+                    "language": "label"
+                },
+                "type": "",
+                "comment": "",
+                "cardinality": "",
+                "minCardinality": "",
+                "maxCardinality": "",
+                "subproperty": [
+                    ""
+                ],
+                "equivalent": [
+                    ""
+                ],
+                "attributes": [
+                    "deprecated",
+                    "external",
+                    "datatype",
+                    "object",
+                    "rdf",
+                    "transitive",
+                    "functional",
+                    "inverse functional",
+                    "symmetric"
+                ]
+            }
+        ]
+    }
 }

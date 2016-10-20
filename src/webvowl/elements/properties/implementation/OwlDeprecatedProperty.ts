@@ -1,10 +1,12 @@
-import { BaseProperty } from '../baseProperty'
+/// <reference path="../baseProperty.ts" />
 
-export class OWLDeprecatedProperty extends BaseProperty {
-    constructor(graph) {
-        super(graph);
-        this.attributes = ["deprecated"];
-        this.styleClass = "deprecatedproperty";
-        this.type = "owl:DeprecatedProperty";
+namespace TRVOWL.elements {
+    export class OWLDeprecatedProperty extends BaseProperty {
+        constructor(graph) {
+            super(graph);
+            this.attributes = ["deprecated"];
+            this.styleClass = "deprecatedproperty";
+            this.type = "owl:DeprecatedProperty";
+        }
     }
 }

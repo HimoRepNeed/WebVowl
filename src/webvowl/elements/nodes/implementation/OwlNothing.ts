@@ -1,10 +1,12 @@
-import { OWLThing } from './OwlThing';
+/// <reference path="./OwlThing.ts" />
 
-export class OWLNothing extends OWLThing {
-    constructor(graph) {
-        super(graph);
-        this.label = 'Nothing';
-        this.type = 'owl:Nothing';
-        this.iri = 'http://www.w3.org/2002/07/owl#Nothing';
+namespace TRVOWL.elements {
+    export class OWLNothing extends OWLThing {
+        constructor(graph) {
+            super(graph);
+            this.label = 'Nothing';
+            this.type = 'owl:Nothing';
+            this.iri = 'http://www.w3.org/2002/07/owl#Nothing';
+        }
     }
 }

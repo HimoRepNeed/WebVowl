@@ -1,10 +1,12 @@
-import { DatatypeNode } from '../DatatypeNode';
+/// <reference path="../DatatypeNode.ts" />
 
-export class RDFSDatatypeNode extends DatatypeNode {
+namespace TRVOWL.elements {
+    export class RDFSDatatypeNode extends DatatypeNode {
 
-    constructor(graph) {
-        super(graph);
-        this.attributes = ['datatype'];
-        this.type = 'rdfs:Datatype';
+        constructor(graph) {
+            super(graph);
+            this.attributes = ['datatype'];
+            this.type = 'rdfs:Datatype';
+        }
     }
 }

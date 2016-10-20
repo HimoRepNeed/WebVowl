@@ -1,9 +1,11 @@
-import { RoundNode } from '../roundNode';
+/// <reference path="../roundNode.ts" />
 
-export class OwlClass extends RoundNode { 
+namespace TRVOWL.elements {
+    export class OwlClass extends RoundNode {
 
-    constructor(graph) { 
-        super(graph)
-        this.type = 'owl:Class';
-    }    
+        constructor(graph) {
+            super(graph)
+            this.type = 'owl:Class';
+        }
+    }
 }

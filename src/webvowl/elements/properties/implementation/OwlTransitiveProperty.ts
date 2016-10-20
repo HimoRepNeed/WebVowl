@@ -1,10 +1,12 @@
-import { BaseProperty } from '../baseProperty'
+/// <reference path="../baseProperty.ts" />
 
-export class OWLTransitiveProperty extends BaseProperty {
-    constructor(graph) {
-        super(graph);
-        this.attributes = ["transitive"];
-        this.styleClass = "transitiveproperty";
-        this.type = "owl:TransitiveProperty";
+namespace TRVOWL.elements {
+    export class OWLTransitiveProperty extends BaseProperty {
+        constructor(graph) {
+            super(graph);
+            this.attributes = ["transitive"];
+            this.styleClass = "transitiveproperty";
+            this.type = "owl:TransitiveProperty";
+        }
     }
 }

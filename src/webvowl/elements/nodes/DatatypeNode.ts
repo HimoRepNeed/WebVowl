@@ -1,10 +1,12 @@
-import { RectangularNode } from './RectangularNode';
+//import { RectangularNode } from './RectangularNode';
+/// <reference path="./RectangularNode.ts" />
 
-export class DatatypeNode extends RectangularNode { 
+namespace TRVOWL.elements {
+    export class DatatypeNode extends RectangularNode {
 
-    constructor(graph) { 
-        super(graph);
+        constructor(graph) {
+            super(graph);
+        }
+
     }
-    
-}    
-
+}

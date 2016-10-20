@@ -1,9 +1,11 @@
-import { RoundNode } from '../roundNode';
+/// <reference path="../roundNode.ts" />
 
-export class OWLDeprecatedClass extends RoundNode {
-    constructor(graph) { 
-        super(graph);
-        this.attributes = ['deprecated'];
-        this.type = 'owl:DeprecatedClass';
+namespace TRVOWL.elements {
+    export class OWLDeprecatedClass extends RoundNode {
+        constructor(graph) {
+            super(graph);
+            this.attributes = ['deprecated'];
+            this.type = 'owl:DeprecatedClass';
+        }
     }
 }

@@ -1,191 +1,191 @@
+namespace TRVOWL.data {
+    export var context1 = {
 
-export var context1 = {
-
-    "relatesToUnitProperties": {
-        "@id": "http://ontology.onesourcetax.com/core/relatesToUnitProperties",
-        "@type": "@id"
-    },
-    "isLocatedIn": {
-        "@id": "http://ontology.onesourcetax.com/core/isLocatedIn"
-    },
-    "hasName": {
-        "@id": "http://ontology.onesourcetax.com/core/hasName"
-    },
-    "hasCode": {
-        "@id": "http://ontology.onesourcetax.com/core/hasCode"
-    },
-    "asOf": {
-        "@id": "http://ontology.onesourcetax.com/core/asOf",
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
-    "relatesToUnit": {
-        "@id": "http://ontology.onesourcetax.com/core/relatesToUnit",
-        "@type": "@id"
-    },
-    "hasUnitType": {
-        "@id": "http://ontology.onesourcetax.com/core/hasUnitType"
-    },
-    "assignToDeliverable": {
-        "@id": "http://ontology.onesourcetax.com/core/assignToDeliverable",
-        "@type": "@id"
-    },
-    "imports": {
-        "@id": "http://www.w3.org/2002/07/owl#imports",
-        "@type": "@id"
-    },
-    "hasPurpose": {
-        "@id": "http://ontology.onesourcetax.com/core/hasPurpose",
-        "@type": "@id"
+        "relatesToUnitProperties": {
+            "@id": "http://ontology.onesourcetax.com/core/relatesToUnitProperties",
+            "@type": "@id"
+        },
+        "isLocatedIn": {
+            "@id": "http://ontology.onesourcetax.com/core/isLocatedIn"
+        },
+        "hasName": {
+            "@id": "http://ontology.onesourcetax.com/core/hasName"
+        },
+        "hasCode": {
+            "@id": "http://ontology.onesourcetax.com/core/hasCode"
+        },
+        "asOf": {
+            "@id": "http://ontology.onesourcetax.com/core/asOf",
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+        },
+        "relatesToUnit": {
+            "@id": "http://ontology.onesourcetax.com/core/relatesToUnit",
+            "@type": "@id"
+        },
+        "hasUnitType": {
+            "@id": "http://ontology.onesourcetax.com/core/hasUnitType"
+        },
+        "assignToDeliverable": {
+            "@id": "http://ontology.onesourcetax.com/core/assignToDeliverable",
+            "@type": "@id"
+        },
+        "imports": {
+            "@id": "http://www.w3.org/2002/07/owl#imports",
+            "@type": "@id"
+        },
+        "hasPurpose": {
+            "@id": "http://ontology.onesourcetax.com/core/hasPurpose",
+            "@type": "@id"
+        }
     }
+    export var graph1 = [
+        {
+
+            "@id": "http://data.onesourcetax.com/customer-1",
+            "@type": "http://www.w3.org/2002/07/owl#Ontology",
+            "imports": "http://ontology.onesourcetax.com/core/"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:Cox",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Customer"],
+            "hasName": "Cox",
+            "hasPurpose": ["http://data.onesourcetax.com/customer-1:TaxProvision", "http://data.onesourcetax.com/customer-1:IncomeTax", "http://data.onesourcetax.com/customer-1:EstimatedPayment"]
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:Deliverable-1",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
+            "hasName": "Income Tax Return",
+            "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-1"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:Deliverable-10",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
+            "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-10"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:Deliverable-2",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
+            "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-2"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:Deliverable-3",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
+            "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-3"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:Deliverable-4",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
+            "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-4"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:Deliverable-5",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
+            "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-5"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:Deliverable-6",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
+            "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-6"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:Deliverable-7",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
+            "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-7"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:Deliverable-8",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
+            "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-8"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:EstimatedPayment",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Purpose"]
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:IncomeTax",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Purpose"],
+            "assignToDeliverable": "http://data.onesourcetax.com/customer-1:Deliverable-1"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:TaxProvision",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Purpose"]
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:Unit-1",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Unit"]
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-1",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
+            "asOf": "2015",
+            "hasCode": "0000000001",
+            "hasName": "CEI - CAP Audit Company",
+            "hasUnitType": "Subsidiary",
+            "relatesToUnit": "http://data.onesourcetax.com/customer-1:Unit-1"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-10",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"]
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-2",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
+            "asOf": "2015",
+            "hasCode": "1AD1110009",
+            "hasName": "Manheim's Pennsylvania Auction Services, Inc.",
+            "isLocatedIn": "Domestic"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-3",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
+            "asOf": "2015",
+            "hasCode": "0000000003",
+            "hasName": "CAP - NonConsolidated",
+            "hasUnitType": "Subsidiary"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-4",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
+            "asOf": "2015",
+            "hasCode": "1AG0000010",
+            "hasName": "Greater Orlando Auto Auction, Inc.",
+            "isLocatedIn": "Domestic"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-5",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
+            "asOf": "2015",
+            "hasCode": "0000000004",
+            "hasName": "XTIME - CAP Audit Company",
+            "hasUnitType": "Subsidiary"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-6",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
+            "asOf": "2015",
+            "hasCode": "AI363L",
+            "hasName": "NextGear Capital UK Limited",
+            "isLocatedIn": "Foreign"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-7",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
+            "asOf": "2014",
+            "hasCode": "0000000001",
+            "hasName": "CEI - CAP Audit Company",
+            "hasUnitType": "Subsidiary",
+            "relatesToUnit": "http://data.onesourcetax.com/customer-1:Unit-1"
+        }, {
+            "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-8",
+            "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
+            "asOf": "2015",
+            "hasCode": "AI364L",
+            "hasName": "Cox Automotive International S.a.r.l.",
+            "isLocatedIn": "Foreign"
+        }, {
+            "@id": "http://ontology.onesourcetax.com/core/assignToDeliverable",
+            "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        }, {
+            "@id": "http://ontology.onesourcetax.com/core/assignedToBusiness",
+            "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        }, {
+            "@id": "http://ontology.onesourcetax.com/core/assignedToProduct",
+            "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        }, {
+            "@id": "http://ontology.onesourcetax.com/core/assignedToTime",
+            "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        }, {
+            "@id": "http://ontology.onesourcetax.com/core/hasBusinessType",
+            "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        }, {
+            "@id": "http://ontology.onesourcetax.com/core/hasCode",
+            "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        }, {
+            "@id": "http://ontology.onesourcetax.com/core/hasName",
+            "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        }, {
+            "@id": "http://ontology.onesourcetax.com/core/hasPurpose",
+            "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        }, {
+            "@id": "http://ontology.onesourcetax.com/core/isLocatedIn",
+            "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
+        }]
 }
-export var graph1 = [
-    {
-
-        "@id": "http://data.onesourcetax.com/customer-1",
-        "@type": "http://www.w3.org/2002/07/owl#Ontology",
-        "imports": "http://ontology.onesourcetax.com/core/"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:Cox",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Customer"],
-        "hasName": "Cox",
-        "hasPurpose": ["http://data.onesourcetax.com/customer-1:TaxProvision", "http://data.onesourcetax.com/customer-1:IncomeTax", "http://data.onesourcetax.com/customer-1:EstimatedPayment"]
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:Deliverable-1",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
-        "hasName": "Income Tax Return",
-        "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-1"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:Deliverable-10",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
-        "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-10"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:Deliverable-2",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
-        "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-2"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:Deliverable-3",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
-        "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-3"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:Deliverable-4",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
-        "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-4"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:Deliverable-5",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
-        "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-5"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:Deliverable-6",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
-        "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-6"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:Deliverable-7",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
-        "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-7"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:Deliverable-8",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Deliverable"],
-        "relatesToUnitProperties": "http://data.onesourcetax.com/customer-1:UnitProperties-8"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:EstimatedPayment",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Purpose"]
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:IncomeTax",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Purpose"],
-        "assignToDeliverable": "http://data.onesourcetax.com/customer-1:Deliverable-1"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:TaxProvision",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Purpose"]
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:Unit-1",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/Unit"]
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-1",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
-        "asOf": "2015",
-        "hasCode": "0000000001",
-        "hasName": "CEI - CAP Audit Company",
-        "hasUnitType": "Subsidiary",
-        "relatesToUnit": "http://data.onesourcetax.com/customer-1:Unit-1"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-10",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"]
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-2",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
-        "asOf": "2015",
-        "hasCode": "1AD1110009",
-        "hasName": "Manheim's Pennsylvania Auction Services, Inc.",
-        "isLocatedIn": "Domestic"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-3",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
-        "asOf": "2015",
-        "hasCode": "0000000003",
-        "hasName": "CAP - NonConsolidated",
-        "hasUnitType": "Subsidiary"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-4",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
-        "asOf": "2015",
-        "hasCode": "1AG0000010",
-        "hasName": "Greater Orlando Auto Auction, Inc.",
-        "isLocatedIn": "Domestic"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-5",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
-        "asOf": "2015",
-        "hasCode": "0000000004",
-        "hasName": "XTIME - CAP Audit Company",
-        "hasUnitType": "Subsidiary"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-6",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
-        "asOf": "2015",
-        "hasCode": "AI363L",
-        "hasName": "NextGear Capital UK Limited",
-        "isLocatedIn": "Foreign"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-7",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
-        "asOf": "2014",
-        "hasCode": "0000000001",
-        "hasName": "CEI - CAP Audit Company",
-        "hasUnitType": "Subsidiary",
-        "relatesToUnit": "http://data.onesourcetax.com/customer-1:Unit-1"
-    }, {
-        "@id": "http://data.onesourcetax.com/customer-1:UnitProperties-8",
-        "@type": ["http://www.w3.org/2002/07/owl#NamedIndividual", "http://ontology.onesourcetax.com/core/UnitProperties"],
-        "asOf": "2015",
-        "hasCode": "AI364L",
-        "hasName": "Cox Automotive International S.a.r.l.",
-        "isLocatedIn": "Foreign"
-    }, {
-        "@id": "http://ontology.onesourcetax.com/core/assignToDeliverable",
-        "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    }, {
-        "@id": "http://ontology.onesourcetax.com/core/assignedToBusiness",
-        "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    }, {
-        "@id": "http://ontology.onesourcetax.com/core/assignedToProduct",
-        "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    }, {
-        "@id": "http://ontology.onesourcetax.com/core/assignedToTime",
-        "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    }, {
-        "@id": "http://ontology.onesourcetax.com/core/hasBusinessType",
-        "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    }, {
-        "@id": "http://ontology.onesourcetax.com/core/hasCode",
-        "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    }, {
-        "@id": "http://ontology.onesourcetax.com/core/hasName",
-        "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    }, {
-        "@id": "http://ontology.onesourcetax.com/core/hasPurpose",
-        "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    }, {
-        "@id": "http://ontology.onesourcetax.com/core/isLocatedIn",
-        "@type": "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    }]
-

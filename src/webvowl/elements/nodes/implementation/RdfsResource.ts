@@ -1,15 +1,17 @@
-import { RoundNode } from '../roundNode';
+/// <reference path="../roundNode.ts" />
 
-export class RDFSResourceClass extends RoundNode {
-    constructor(graph) {
-        super(graph);
-        this.attributes = ["rdf"];
-        this.label = "Resource";
-        this.radius = 30;
-        this.styleClass = "rdfsresource";
-        this.type = "rdfs:Resource";
+namespace TRVOWL.elements {
+    export class RDFSResourceClass extends RoundNode {
+        constructor(graph) {
+            super(graph);
+            this.attributes = ["rdf"];
+            this.label = "Resource";
+            this.radius = 30;
+            this.styleClass = "rdfsresource";
+            this.type = "rdfs:Resource";
+        }
+        draw(element) {
+            return super.draw(element, ["rdf", "dashed"]);
+        };
     }
-    draw(element) {
-        return super.draw(element, ["rdf", "dashed"]);
-    };
 }

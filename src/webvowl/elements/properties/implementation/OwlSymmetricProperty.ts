@@ -1,10 +1,12 @@
-import { BaseProperty } from '../baseProperty';
+/// <reference path="../baseProperty.ts" />
 
-export class OWLSymmetricProperty extends BaseProperty {
-    constructor(graph) {
-        super(graph);
-        this.attributes = ["symmetric"];
-        this.styleClass = "symmetricproperty";
-        this.type = "owl:SymmetricProperty";
+namespace TRVOWL.elements {
+    export class OWLSymmetricProperty extends BaseProperty {
+        constructor(graph) {
+            super(graph);
+            this.attributes = ["symmetric"];
+            this.styleClass = "symmetricproperty";
+            this.type = "owl:SymmetricProperty";
+        }
     }
 }

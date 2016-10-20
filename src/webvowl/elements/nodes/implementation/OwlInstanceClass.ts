@@ -1,17 +1,18 @@
-import { RoundNode } from '../roundNode';
-import { OwlClass } from '../implementation/OwlClass'
+/// <reference path="../roundNode.ts" />
+/// <reference path="../implementation/OwlClass.ts" />
 
-export class OWLInstanceClass extends OwlClass {
+namespace TRVOWL.elements {
+    export class OWLInstanceClass extends OwlClass {
 
-    constructor(graph) {
-        super(graph)
-        this.type = 'owl:instanceClass';
-        this.tooltip = this.iri;
-        this.radius = 40;
+        constructor(graph) {
+            super(graph)
+            this.type = 'owl:instanceClass';
+            this.tooltip = this.iri;
+            this.radius = 40;
+        }
+
+        draw(element) {
+            return super.draw(element, ['lightgreen', 'dotted']);
+        }
     }
-
-    draw(element) {
-        return super.draw(element, ['lightgreen', 'dotted']);
-    }
-
 }
