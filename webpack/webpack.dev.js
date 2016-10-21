@@ -6,12 +6,8 @@ var webpack = require('webpack');
 // var glob = require("glob");
 module.exports = {
     entry: {
-        'vendor': ['./node_modules/d3//d3.js', './node_modules/angular/angular.js'],
-        'app': [
-            './out/vowl.component.js',
-            './out/vowl.tpl.html.js',
-            './out/index.js',
-        ]
+        //'vendor': ['./node_modules/d3//d3.js', './node_modules/angular/angular.js', './lib/lodash/lodash.min.js'],
+        // app: 'app.js'
     },
     output: {
         path: 'dist',
@@ -29,34 +25,18 @@ module.exports = {
     devtool: 'source-map',
     plugins: [
         new CopyWebpackPlugin([{
-                from: 'src/assets/',
-                to: 'css'
-            } // , {
-            //         from: 'src/assets/js',
-            //         to: 'js'
-            //     }, {
-            //         from: 'src/apiConfig.json'
-            //     }, {
-            //         from: 'bower_components/bootstrap/dist/css/bootstrap.css',
-            //         to: 'css'
-            //     }, {
-            //         from: 'bower_components/bento-modern/bootstrap/platform-theme.min.css',
-            //         to: 'css'
-            //     }, {
-            //         from: 'bower_components/bento-modern/components/platform-theme.css',
-            //         to: 'css'
-            //     }, {
-            //         from: 'bower_components/bento-modern/fonts/',
-            //         to: 'fonts'
-            //     }, {
-            //         from: 'src/app/home/services/peers/data',
-            //         to: 'data'
-            //     }
-            //     // }, {
-            //     //     from: 'bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css',
-            //     //     to: 'css'
-
-        ]),
+            from: 'src/assets/',
+            to: 'css'
+        }, {
+            from: './node_modules/d3/d3.js',
+            to: ''
+        }, {
+            from: './node_modules/angular/angular.js',
+            to: ''
+        }, {
+            from: './lib/lodash/lodash.min.js',
+            to: ''
+        }]),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             inject: 'body',
@@ -82,4 +62,4 @@ module.exports = {
     module: {
         loaders: loaders
     }
-}
+};

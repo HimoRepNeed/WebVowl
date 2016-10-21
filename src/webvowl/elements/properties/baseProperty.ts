@@ -151,8 +151,8 @@ namespace TRVOWL.elements {
                 let equivalentLabels;
                 let equivalentString;
 
-                equivalentLabels = this.equivalents.map(function (property) {
-                    return property.labelForCurrentLanguage;
+                equivalentLabels = this.equivalents.map(function (property: TRVOWL.elements.BaseElement) {
+                    return property.labelForCurrentLanguage();
                 });
                 equivalentString = equivalentLabels.join(", ");
 

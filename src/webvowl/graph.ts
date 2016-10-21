@@ -42,9 +42,6 @@ namespace TRVOWL {
             this.paused = false;
             Options.data = owldata;
             this.options = Options;
-            // this.parser = new Parser(this);
-            // this.math = Math;
-
             this.initializeModules();
             this.initializeGraph();
         }
@@ -62,8 +59,6 @@ namespace TRVOWL {
             Options.nodeElements.attr("transform", function (node) {
                 return "translate(" + node.x + "," + node.y + ")";
             });
-
-
 
             // Set label group positions
             this.labelGroupElements.attr("transform", function (label) {
@@ -99,11 +94,12 @@ namespace TRVOWL {
 
             // Set cardinality positions
             this.cardinalityElements.attr("transform", function (property) {
-                let label = property.link.label;
-                let pos = TRVOWL.util.VowlMath.calculateIntersection(label, property.range, _self.CARDINALITY_HDISTANCE);
-                let normalV = TRVOWL.util.VowlMath.calculateNormalVector(label, property.domain, _self.CARDINALITY_VDISTANCE);
-
-                return "translate(" + (pos.x + normalV.x) + "," + (pos.y + normalV.y) + ")";
+                if (property && property.link) {
+                    let label = property.link.label;
+                    let pos = TRVOWL.util.VowlMath.calculateIntersection(label, property.range, _self.CARDINALITY_HDISTANCE);
+                    let normalV = TRVOWL.util.VowlMath.calculateNormalVector(label, property.domain, _self.CARDINALITY_VDISTANCE);
+                    return "translate(" + (pos.x + normalV.x) + "," + (pos.y + normalV.y) + ")";
+                }
             });
         }
 

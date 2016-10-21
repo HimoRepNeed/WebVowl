@@ -167,7 +167,7 @@ namespace TRVOWL.elements {
                 return;
             }
 
-            let equivalentNames = equivalentClasses.map(function (node) {
+            let equivalentNames = equivalentClasses.map(function (node: TRVOWL.elements.BaseElement) {
                 return node.labelForCurrentLanguage();
             });
 

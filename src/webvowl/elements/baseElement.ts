@@ -2,7 +2,7 @@
 
 namespace TRVOWL.elements {
     export interface IBaseElement {
-        equivalents: any[];
+        equivalents: IBaseElement[];
         id: string;
         label: string;
         type: string;
@@ -28,7 +28,7 @@ namespace TRVOWL.elements {
 
     export class BaseElement implements IBaseElement {
 
-        equivalents: any[] = [];
+        equivalents: IBaseElement[] = [];
         id: string;
         label: string;
         type: string;
@@ -47,8 +47,7 @@ namespace TRVOWL.elements {
         mouseEntered: boolean = false;
         styleClass: string;
         visible: boolean = true;
-
-        attributes: any[] = [];
+        attributes: string[] = [];
         annotations;
 
         constructor(protected graph) {

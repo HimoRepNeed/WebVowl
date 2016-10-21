@@ -12,10 +12,10 @@ namespace TRVOWL {
         static properties;
         static classMap;
         static propertyMap;
-        static graph;
+        static graph: TRVOWL.Graph;
         static ontologyData;
 
-        static parse = (ontologyData, graph) => {
+        static parse = (ontologyData, graph: TRVOWL.Graph) => {
             if (!ontologyData || !graph) {
                 return;
             }
@@ -48,13 +48,13 @@ namespace TRVOWL {
 
         }
 
-        private static combineClasses = (baseObject, attributes) => {
-            let combinations = [];
+        private static combineClasses = (baseObject: TRVOWL.elements.BaseNode[], attributes: TRVOWL.elements.BaseElement[]) => {
+            let combinations: TRVOWL.elements.BaseNode[] = [];
             //let prototypeMap = Parser.createLowerCasePrototypeMap(nodePrototypeMap);
 
             if (baseObject) {
                 let count = 0;
-                angular.forEach(baseObject, function (c) {
+                angular.forEach(baseObject, function (c: TRVOWL.elements.BaseNode) {
                     let matchingAttribute;
 
                     if (attributes) {
@@ -85,8 +85,8 @@ namespace TRVOWL {
                             node.iri = c.iri;
 
                             if (c.individuals) {
-                                angular.forEach(c.individuals, function (ind) {
-                                    let individualnode = TRVOWL.elements.NodeFactory.GetNode(Parser.graph, 'owl:instanceclass');
+                                angular.forEach(c.individuals, function (ind: TRVOWL.elements.OWLInstanceClass) {
+                                    let individualnode = <TRVOWL.elements.OWLInstanceClass>TRVOWL.elements.NodeFactory.GetNode(Parser.graph, 'owl:instanceclass');
                                     individualnode.label = node.label;
                                     individualnode.iri = ind.iri;
                                     individualnode.id = 'node-annt' + count;
@@ -135,10 +135,6 @@ namespace TRVOWL {
                                         }
                                     }
 
-
-
-
-                                    //
                                     node.individuals.push(individualnode);
                                     count = count + 1;
                                 })

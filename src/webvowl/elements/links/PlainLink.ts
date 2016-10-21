@@ -12,7 +12,7 @@ namespace TRVOWL.elements {
         frontPart: LinkPart;
         linkparts: Array<LinkPart>;
 
-        constructor(private domain, private range, public property) {
+        constructor(private domain: BaseElement, private range: BaseElement, public property: BaseElement) {
             this.label = new Label(property, this);
             this.frontPart = new LinkPart(this.domain, this.label, this);
             this.backPart = new LinkPart(this.label, this.range, this);

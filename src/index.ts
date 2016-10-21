@@ -24,3 +24,4 @@ namespace TRVOWL {
 }
 
 var x = TRVOWL.app.module;
+angular.bootstrap(document, [x.name], { strictDi: true });

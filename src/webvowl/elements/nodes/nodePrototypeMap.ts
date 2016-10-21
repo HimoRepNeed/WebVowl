@@ -17,7 +17,7 @@
 
 namespace TRVOWL.elements {
     export class NodeFactory {
-        static GetNode(graph, type: string): any {
+        static GetNode(graph, type: string): BaseNode {
             type = type.toLowerCase();
             if (type === 'externalclass') {
                 let externalClass = new ExternalClass(graph);
