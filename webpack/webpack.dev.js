@@ -36,6 +36,9 @@ module.exports = {
         }, {
             from: './lib/lodash/lodash.min.js',
             to: ''
+        }, {
+            from: './out/app.js',
+            to: ''
         }]),
         new HtmlWebpackPlugin({
             template: './src/index.html',

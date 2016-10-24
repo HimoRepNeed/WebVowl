@@ -38,9 +38,13 @@ namespace TRVOWL {
         //private parser: Parser;
         options;
 
-        constructor(private graphContainerSelector: string, private owldata) {
+        constructor(private graphContainerSelector: string, private owldata, private width: number, private height: number) {
             this.paused = false;
             Options.data = owldata;
+            if (this.height && this.width) {
+                Options.width = this.width;
+                Options.height = this.height;
+            }
             this.options = Options;
             this.initializeModules();
             this.initializeGraph();

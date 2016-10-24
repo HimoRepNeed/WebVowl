@@ -45,6 +45,7 @@
 // }
 
 
+
 /// <reference path="./webvowl/graph.ts" />
 /// <reference path="././data/CustomerCox_from Marcos.ts" />
 /// <reference path="./vowl.tpl.html.ts" />
@@ -52,14 +53,17 @@
 namespace TRVOWL.component {
   export class VowlController {
 
+    height: number;
+    width: number;
     vowldata;
+
     graph: Graph;
     constructor() {
       this.vowldata = TRVOWL.data.marcos;
     }
 
     $onInit = () => {
-      this.graph = new Graph('#graph', this.vowldata);
+      this.graph = new Graph('#graph', this.vowldata, this.width, this.height);
       this.graph.start();
     }
   }
@@ -71,7 +75,9 @@ namespace TRVOWL.component {
 
     constructor() {
       this.bindings = {
-        vowldata: '<'
+        vowldata: '<',
+        width: '<',
+        height: '<'
       };
       this.controller = VowlController;
       this.template = TRVOWL.template.graphTemplate;
