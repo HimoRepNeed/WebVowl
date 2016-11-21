@@ -2,21 +2,30 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Ontology</title>
-	<!--<link rel="stylesheet" href="./css/bootstrap.css" />
+    <meta charset="UTF-8">
+    <title>Ontology</title>
+    <!--<link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/platform-theme.min.css" />
     <link rel="stylesheet" href="./css/platform-theme.css" />-->
-	<link rel="stylesheet" type="text/css" href="./css/app.css">
+    <link rel="stylesheet" type="text/css" href="./css/app.css">
 </head>
 
 <body ng-cloak>
-	<!--<ui-view></ui-view>-->
-	<vowl vowldata="" height="940" width="1890"></vowl>
-	<script src="angular.js"></script>
-	<script src="d3.js"></script>
-	<script src="lodash.min.js"></script>
-	<script src="app.js"></script>
+    <!--<ui-view></ui-view>-->
+    <script src="angular.js"></script>
+    <script src="d3.js"></script>
+    <script src="lodash.min.js"></script>
+    <script>
+        window.onload = function() {
+            //var xx = document.getElementById('vowl');
+            //xx.attributes['vowldata'] = marcos;
+            angular.bootstrap(document, [x.name], {
+                strictDi: true
+            });
+        }
+    </script>
+    <vowl id="vowl" vowldata="marcos" height="940" width="1890"> </vowl>
+    <script src="app.js"></script>
 </body>
 
 </html>

@@ -4,6 +4,7 @@
 
 namespace TRVOWL.elements {
     export class RoundNode extends BaseNode {
+        expanded: boolean = false;
         collapsible: boolean = false;
         radius: number = 50
         collapsingGroupElement;
@@ -11,7 +12,7 @@ namespace TRVOWL.elements {
         textBlock;
         tooltip: string;
 
-        constructor(protected graph) {
+        constructor(protected graph: TRVOWL.Graph) {
             super(graph);
         }
 
@@ -64,7 +65,7 @@ namespace TRVOWL.elements {
             var dx = (2 / 5) * this.actualRadius(),
                 dy = (-7 / 10) * this.actualRadius();
 
-            this.pinGroupElement = DrawTools.drawPin(this.nodeElement(), dx, dy, this.removePin);
+            this.pinGroupElement = DrawTools.drawPin(this.nodeElement, dx, dy, this.removePin);
         }
 
         removePin = () => {
@@ -73,6 +74,52 @@ namespace TRVOWL.elements {
                 this.pinGroupElement.remove();
             }
             this.graph.updateStyle();
+        }
+
+        toggleExpand = () => {
+            if ((this.individuals && this.individuals.length > 0) || this._individuals && this._individuals.length > 0) {
+                if (this.expanded) {
+                    angular.forEach(this.individuals, function (v, i) {
+                        let indvProperty = v._properties[0];
+                        let properties = TRVOWL.Options.unfilteredData.properties.filter(function (vo) { return vo.id === indvProperty.id });
+                        if (properties && properties.length > 0) {
+                            properties[0].active = false;
+                        }
+                        let nodes = TRVOWL.Options.unfilteredData.nodes.filter(function (vo) { return vo.id === v.id });
+                        if (nodes && nodes.length > 0) {
+                            nodes[0].active = false;
+                        }
+                    });
+                    this.expanded = false;
+                    this.graph.update();
+                } else {
+                    //this.individuals = this._individuals;
+                    angular.forEach(this.individuals, function (v, i) {
+                        // v.active = true;
+                        let indvProperty = v._properties[0];
+                        let properties = TRVOWL.Options.unfilteredData.properties.filter(function (vo) { return vo.id === indvProperty.id });
+                        if (properties && properties.length > 0) {
+                            properties[0].active = true;
+                        }
+                        let nodes = TRVOWL.Options.unfilteredData.nodes.filter(function (vo) { return vo.id === v.id });
+                        if (nodes && nodes.length > 0) {
+                            nodes[0].active = true;
+                        }
+                        // v.active = true;
+                        // v._properties[0].active = true;
+                        // v._propertyAttributes[0].active = true;
+                        //TRVOWL.Parser.ontologyData.property.push(v._properties);
+                        //TRVOWL.Parser.ontologyData.propertyAttribute.push(v._propertyAttributes);
+                    })
+
+                    //this._individuals = [];
+                    this.expanded = true;
+                    this.graph.update();
+                    // angular.forEach(this.individuals, function (v, i) {
+                    //     v.nodeElement.selectAll("*").style('opacity', 0)
+                    // });
+                }
+            }
         }
 
         drawCollapsingButton = () => {
@@ -84,6 +131,8 @@ namespace TRVOWL.elements {
                     var dx = (-2 / 5) * _self.actualRadius(),
                         dy = (1 / 2) * _self.actualRadius();
                     return "translate(" + dx + "," + dy + ")";
+                }).on('click', function () {
+                    _self.toggleExpand();
                 });
 
             this.collapsingGroupElement.append("rect")
@@ -129,7 +178,7 @@ namespace TRVOWL.elements {
             DrawTools.appendCircularClass(parentElement, this.actualRadius(),
                 cssClasses, this.tooltip || this.labelForCurrentLanguage(), this.backgroundColor);
 
-            //this.individuals && this.individuals.length > 0 ? this.collapsible = true : this.collapsible = false;
+            (this.individuals && this.individuals.length > 0) || (this._individuals && this._individuals.length > 0) ? this.collapsible = true : this.collapsible = false;
             this.postDrawActions();
         }
 

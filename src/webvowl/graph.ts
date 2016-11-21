@@ -6,6 +6,7 @@
 /// <reference path="./parser.ts" />
 /// <reference path="./modules/focuser.ts" />
 /// <reference path="./modules/datatypeFilter.ts" />
+/// <reference path="./modules/pickAndPin.Filter.ts" />
 
 namespace TRVOWL {
     export class Graph {
@@ -53,6 +54,7 @@ namespace TRVOWL {
         private initializeModules() {
             Options.selectionModules.push(TRVOWL.modules.Focuser);
             Options.filterModules.push(TRVOWL.modules.DatatypeFilter);
+            Options.selectionModules.push(TRVOWL.modules.PickAndPin);
         }
 
         private curveFunction = d3.svg.line().x(function (d: any) { return d.x; }).y(function (d: any) { return d.y }).interpolate("cardinal");
@@ -279,14 +281,25 @@ namespace TRVOWL {
 
         private loadGraphData = () => {
             let _self = this;
+            let filterData = (ob) => {
+                return ob.active;
+            };
             TRVOWL.Parser.parse(Options.data, this);
             Options.unfilteredData = {
-                nodes: TRVOWL.Parser.nodes,
-                properties: TRVOWL.Parser.properties
+                nodes: TRVOWL.Parser.nodes,//.filter(filterData),
+                properties: TRVOWL.Parser.properties//.filter(filterData)
             };
 
+            //filter active nodes
+            let filtereddata = {
+                nodes: TRVOWL.Parser.nodes.filter(filterData),
+                properties: TRVOWL.Parser.properties.filter(filterData)
+            };
+
+            //filter active nodes            
             // Initialize filters with data to replicate consecutive filtering
-            var initializationData = _.clone(Options.unfilteredData);
+            //var initializationData = _.clone(Options.unfilteredData);
+            var initializationData = _.clone(filtereddata);
             Options.filterModules.forEach(function (module) {
                 initializationData = _self.filterFunction(module, initializationData, true);
             });
@@ -301,8 +314,8 @@ namespace TRVOWL {
                 preprocessedData = _self.filterFunction(module, preprocessedData);
             });
 
-            Options.classNodes = preprocessedData.nodes;
-            Options.properties = preprocessedData.properties;
+            Options.classNodes = preprocessedData.nodes.filter(function (v) { return v.active });
+            Options.properties = preprocessedData.properties.filter(function (v) { return v.active });
             Options.links = TRVOWL.parsing.LinkCreator.createLinks(Options.properties);
             Options.labelNodes = Options.links.map(function (link) {
                 return link.label;
@@ -444,6 +457,7 @@ namespace TRVOWL {
         }
 
         update = () => {
+            Options.force.stop();
             this.refreshGraphData();
             this.refreshGraphStyle();
             Options.force.start();

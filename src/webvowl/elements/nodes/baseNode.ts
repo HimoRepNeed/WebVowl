@@ -8,6 +8,9 @@ namespace TRVOWL.elements {
         disjointUnion;
         disjointWith;
         individuals = [];
+        _individuals = [];
+        _properties = [];
+        _propertyAttributes = [];
         intersection;
         union;
         links;
@@ -40,6 +43,7 @@ namespace TRVOWL.elements {
 
         set pinned(val: boolean) {
             this._pinned = val;
+            this.applyFixedLocationAttributes();
         }
 
         get locked(): boolean {

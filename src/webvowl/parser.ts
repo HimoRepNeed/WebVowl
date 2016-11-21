@@ -91,51 +91,55 @@ namespace TRVOWL {
                                     individualnode.iri = ind.iri;
                                     individualnode.id = 'node-annt' + count;
                                     individualnode.tooltip = ind.iri;
-                                    //
+                                    individualnode.active = typeof ind.active === 'undefined' ? false : ind.active;
+                                    node.individuals.push(individualnode);
                                     combinations.push(individualnode);
                                     let property = {
                                         id: 'prop' + count,
-                                        type: 'owl:individualProperty'
+                                        type: 'owl:individualProperty',
+                                        active: false
                                     }
 
                                     let propertyAttribute = {
                                         domain: individualnode.id,
                                         range: node.id,
                                         id: 'prop' + count,
-                                        label: { 'IRI-based': 'Instance Of' }
+                                        label: { 'IRI-based': 'Instance Of' },
+                                        active: false
                                     }
-
+                                    individualnode._properties.push(property);
                                     Parser.ontologyData.property.push(property);
+                                    individualnode._propertyAttributes.push(propertyAttribute);
                                     Parser.ontologyData.propertyAttribute.push(propertyAttribute);
 
-                                    if (ind.annotations) {
-                                        individualnode.annotations = ind.annotations;
-                                        let anntcount = 0;
-                                        for (let a in individualnode.annotations) {
-                                            let aa = individualnode.annotations[a];
-                                            let aaa = aa[0];
-                                            let annotationNode = TRVOWL.elements.NodeFactory.GetNode(Parser.graph, 'rdfs:datatype');
-                                            annotationNode.label = aaa.identifier;
-                                            annotationNode.iri = aaa.identifier;
-                                            annotationNode.id = 'node-annotationt' + count;
-                                            combinations.push(annotationNode);
-                                            let p = {
-                                                id: 'annotation-' + anntcount,
-                                                type: 'owl:DatatypeProperty'
-                                            }
-                                            let pa = {
-                                                domain: individualnode.id,
-                                                id: 'annotation-' + anntcount,
-                                                range: annotationNode.id,
-                                                label: aaa.identifier
-                                            }
-                                            // Parser.ontologyData.property.push(p);
-                                            // Parser.ontologyData.propertyAttribute.push(pa);
-                                            anntcount = anntcount + 1;
-                                        }
-                                    }
+                                    // if (ind.annotations) {
+                                    //     individualnode.annotations = ind.annotations;
+                                    //     let anntcount = 0;
+                                    //     for (let a in individualnode.annotations) {
+                                    //         let aa = individualnode.annotations[a];
+                                    //         let aaa = aa[0];
+                                    //         let annotationNode = TRVOWL.elements.NodeFactory.GetNode(Parser.graph, 'rdfs:datatype');
+                                    //         annotationNode.label = aaa.identifier;
+                                    //         annotationNode.iri = aaa.identifier;
+                                    //         annotationNode.id = 'node-annotationt' + count;
+                                    //         combinations.push(annotationNode);
+                                    //         let p = {
+                                    //             id: 'annotation-' + anntcount,
+                                    //             type: 'owl:DatatypeProperty'
+                                    //         }
+                                    //         let pa = {
+                                    //             domain: individualnode.id,
+                                    //             id: 'annotation-' + anntcount,
+                                    //             range: annotationNode.id,
+                                    //             label: aaa.identifier
+                                    //         }
+                                    //         // Parser.ontologyData.property.push(p);
+                                    //         // Parser.ontologyData.propertyAttribute.push(pa);
+                                    //         anntcount = anntcount + 1;
+                                    //     }
+                                    // }
 
-                                    node.individuals.push(individualnode);
+                                    //node.individuals.push(individualnode);
                                     count = count + 1;
                                 })
                             }
@@ -208,6 +212,7 @@ namespace TRVOWL {
                         property.range = element.range;
                         property.subproperties = element.subproperty;
                         property.superproperties = element.superproperty;
+                        property.active = typeof element.active === 'undefined' ? property.active : element.active;
                         // .type(element.type) Ignore, because we predefined it
                         property.iri = element.iri;
 

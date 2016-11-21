@@ -47,6 +47,7 @@ namespace TRVOWL.elements {
         mouseEntered: boolean = false;
         styleClass: string;
         visible: boolean = true;
+        active: boolean = true;
         attributes: string[] = [];
         annotations;
 

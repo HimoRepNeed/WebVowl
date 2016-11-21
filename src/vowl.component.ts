@@ -51,7 +51,7 @@
 /// <reference path="./vowl.tpl.html.ts" />
 
 namespace TRVOWL.component {
-  export class VowlController {
+  class VowlController {
 
     height: number;
     width: number;
@@ -62,7 +62,7 @@ namespace TRVOWL.component {
       this.vowldata = TRVOWL.data.marcos;
     }
 
-    $onInit = () => {
+    $onInit() {
       this.graph = new Graph('#graph', this.vowldata, this.width, this.height);
       this.graph.start();
     }
@@ -75,7 +75,7 @@ namespace TRVOWL.component {
 
     constructor() {
       this.bindings = {
-        vowldata: '<',
+        vowldata: '=vowldata',
         width: '<',
         height: '<'
       };
